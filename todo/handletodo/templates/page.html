@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="bg-slate-800 w-screen h-screen flex justify-center items-center overflow-hidden">
+  <div class="bg-slate-500 rounded-[20px] border-2 border-slate-900 h-[80%] w-full max-w-[70%] overflow-y-auto">
+    <form  method="post">
+      {% csrf_token %}
+      <div class=" grid grid-cols-[3fr,3fr,1fr] gap-3 bg-white text-black dark:bg-gray-900 shadow-md px-8 py-6">
+        <input name='title' class='rounded-lg font-bold text-[20px] px-2 w-full sm:w-auto' type="text" placeholder="Text input">
+        <input name='datetime' class='rounded-lg font-bold text-[20px] px-2 w-full sm:w-auto' type="datetime-local">
+        <button class='border-2 border-green-600 bg-green-800 px-5 py-1 text-white rounded-lg w-full sm:w-auto' type="submit">Add</button>
+      </div>
+    </form>
+    {% for todo in todos %}
+    <div class="bg-slate-600 grid grid-cols-[3fr,3fr,1fr] gap-3 p-3">
+      <p class="mx-2 text-[20px] flex flex-wrap justify-center items-center">{{todo.title}}</p>
+      <p class="mx-2 text-[20px] flex flex-wrap justify-center items-center">{{todo.datetime}}</p>
+      <a href="{% url 'delete' todo.id %}"><button class='border-2 bg-red-600 px-5 py-1 text-white rounded-lg w-full sm:w-auto'>remove</button></a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock content %}

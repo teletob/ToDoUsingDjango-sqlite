@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="bg-slate-800 w-screen h-screen flex justify-center items-center">
+    <div class="h-[80%] w-full max-w-[70%] bg-white overflow-y-auto">
+      <div class="grid grid-cols-[3fr,3fr,1fr] gap-3 bg-white text-black dark:bg-gray-900 shadow-md rounded-lg px-8 py-6">
+        <input class='rounded-lg font-bold text-[20px] px-2 w-full sm:w-auto' type="text" placeholder="Text input">
+        <input class='rounded-lg font-bold text-[20px] px-2 w-full sm:w-auto' type="datetime-local">
+        <button class='border-2 border-green-600 bg-green-800 px-5 py-1 text-white rounded-lg w-full sm:w-auto' type="submit">Add</button>
+      </div>
+      <div class="grid grid-cols-[3fr,3fr,1fr] gap-3 p-3">
+        <p class="mx-2 text-[30px] flex flex-wrap justify-center items-center">hemmo</p>
+        <p class="mx-2 text-[30px] flex flex-wrap justify-center items-center">hemmo</p>
+        <button class='border-2 bg-red-600 px-5 py-1 text-white rounded-lg w-full sm:w-auto'>remove</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
